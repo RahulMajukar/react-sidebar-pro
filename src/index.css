@@ -1,5 +1,7 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
@@ -53,4 +55,37 @@ body {
 
 .small-heading {
   font-weight: bold;
+}
+
+/* aside{
+  background-color: #5876aa;
+} */
+
+.css-dip3t8{
+  background-color: #5876aa !important;
+ /* color: #fff; */
+}
+
+.css-16jesut >.ps-menu-button:hover {
+  background-color: #6c82a9 !important;
+}
+
+/* .ps-sidebar-root {
+  background-color: rgb(88, 118, 170);
+} */
+
+.css-ewdv3l{
+  background-color: rgb(88, 118, 170) !important;
+}
+
+.ps-open{
+  background-color: #6c82a9  !important;
+}
+
+/* .css-1tqrhto:hover{
+  
+} */
+
+.ps-menuitem-root a:hover{
+  background-color: rgb(62, 103, 173) !important;
 }

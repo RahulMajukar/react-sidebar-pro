@@ -19,7 +19,7 @@ const Navbar: React.FC = () => {
 
     return (
         <div style={{ display: 'flex', height: '100vh', minHeight: '100%' }}>
-            <Sidebar collapsed={collapsed} transitionDuration={1000}>
+            <Sidebar collapsed={collapsed} transitionDuration={1000} style={{backgroundColor:"#5876aa",color:"#fff"}}>
                 <Menu onClick={() => setCollapsed(!collapsed)}>
                     <div className="css-1vmkajq" style={{ marginBottom: '24px', marginTop: '16px' }}>
                         <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -28,11 +28,11 @@ const Navbar: React.FC = () => {
                             </div>
                             {!collapsed && (
                                 <div style={{ marginLeft: '8px' }}>
-                                    <p style={{ fontWeight: 700, color: '#0098e5', margin: 0 }} className="css-crt1ee">
+                                    <p style={{ fontWeight: 700,  margin: 0 }} className="css-crt1ee">
                                         Nucleus
                                     </p>
                                     <p style={{
-                                        color: '#0098e5',
+                                        // color: '#0098e5',
                                         margin: -8,
                                         marginTop: '4px',
                                         overflow: 'hidden',
