@@ -89,3 +89,8 @@ body {
 .ps-menuitem-root a:hover{
   background-color: rgb(62, 103, 173) !important;
 }
+
+a{
+  color: white;
+  text-decoration: none;
+}

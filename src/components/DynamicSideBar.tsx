@@ -4,6 +4,7 @@ import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import { navbarConfig } from '../siteConfig/navbar.config';
 import Logo from "../assets/images/logo.png";
 import './NavBar.css';
+import { Link, Outlet } from 'react-router-dom';
 
 const DynamicSideBar: React.FC = () => {
     const [collapsed, setCollapsed] = React.useState(false);
@@ -43,7 +44,7 @@ const DynamicSideBar: React.FC = () => {
                 </Menu>
 
                 {navbarConfig.menus.map((menu) => (
-                    <Menu key={menu.key}>
+                    <Menu key={menu.key} style={menu.style}>
                         <SubMenu
                             onClick={() => handleOpenSubMenu(menu.key)}
                             open={open === menu.key}
@@ -54,13 +55,21 @@ const DynamicSideBar: React.FC = () => {
                                 subMenu.subMenus ? (
                                     <SubMenu key={index} label={subMenu.label}>
                                         {subMenu.subMenus.map((nestedSubMenu, nestedIndex) => (
-                                            <MenuItem key={nestedIndex}>
+                                            <MenuItem 
+                                                key={nestedIndex} 
+                                                icon={nestedSubMenu.icon && React.createElement(nestedSubMenu.icon)}
+                                                component={<Link to={nestedSubMenu.path || "#"} />}
+                                            >
                                                 {nestedSubMenu.label}
                                             </MenuItem>
                                         ))}
                                     </SubMenu>
                                 ) : (
-                                    <MenuItem key={index} icon={subMenu.icon && React.createElement(subMenu.icon)}>
+                                    <MenuItem 
+                                        key={index} 
+                                        icon={subMenu.icon && React.createElement(subMenu.icon)}
+                                        component={<Link to={subMenu.path || "#"} />}
+                                    >
                                         {subMenu.label}
                                     </MenuItem>
                                 )
@@ -76,6 +85,8 @@ const DynamicSideBar: React.FC = () => {
                     <button className="sb-button" onClick={() => setCollapsed(!collapsed)}>
                         Collapse
                     </button>
+
+                    <Outlet />
                 </div>
             </main>
         </div>
